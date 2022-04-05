@@ -32,12 +32,12 @@ namespace CloudPoint
                     Configuration.GetConnectionString("DefaultConnection")));
 
 
-            //services.AddIdentityCore<ApplicationUser>()
+            //services.AddIdentitye<ApplicationUser,A>()
             //    .AddDefaultUI()
             //   .AddEntityFrameworkStores<ApplicationDbContext>()
             //   .AddDefaultTokenProviders();
 
-            services.AddDefaultIdentity<ApplicationUser>(options => options.SignIn.RequireConfirmedAccount = true)
+            services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = true)
                 .AddEntityFrameworkStores<ApplicationDbContext>();
             services.AddControllersWithViews();
             services.AddRazorPages();
@@ -64,6 +64,7 @@ namespace CloudPoint
 
             app.UseAuthentication();
             app.UseAuthorization();
+            //app.UseSession();
 
             app.UseEndpoints(endpoints =>
             {

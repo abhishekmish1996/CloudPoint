@@ -1,6 +1,8 @@
 ﻿@using Microsoft.AspNetCore.Identity
-@inject SignInManager<CloudPoint.Data.ApplicationUser> SignInManager
-@inject UserManager<CloudPoint.Data.ApplicationUser> UserManager
+@inject SignInManager<IdentityUser> SignInManager
+@*@inject SignInManager<CloudPoint.Data.ApplicationUser> SignInManager*@
+@inject UserManager<IdentityUser> UserManager
+@*@inject UserManager<CloudPoint.Data.ApplicationUser> UserManager*@
 
 <ul class="navbar-nav">
 @if (SignInManager.IsSignedIn(User))
